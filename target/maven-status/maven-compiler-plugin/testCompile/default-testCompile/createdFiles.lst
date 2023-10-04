@@ -1,0 +1,7 @@
+base\BasePage.class
+utilities\PropertiesReader.class
+cucumberSteps\LoginSteps.class
+pageobjects\LoginPage.class
+utilities\BaseTest.class
+cucumberSteps\Hooks.class
+runner\TestRunner.class
