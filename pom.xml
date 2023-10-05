@@ -21,7 +21,7 @@
     <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-    <serenity-maven-plugin.version>3.9.8</serenity-maven-plugin.version>
+    <serenity-maven-plugin.version>4.0.0</serenity-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -35,17 +35,22 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-single-page-report -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-single-page-report</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+
     <dependency>
       <groupId>net.serenity-bdd</groupId>
       <artifactId>serenity-core</artifactId>
       <version>${serenity.version}</version>
-<!--      <scope>test</scope>-->
     </dependency>
     <dependency>
       <groupId>net.serenity-bdd</groupId>
       <artifactId>serenity-junit</artifactId>
       <version>${serenity.version}</version>
-<!--      <scope>test</scope>-->
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
@@ -53,7 +58,6 @@
       <groupId>net.serenity-bdd</groupId>
       <artifactId>serenity-cucumber</artifactId>
       <version>${serenity-cucumber.version}</version>
-<!--      <scope>test</scope>-->
     </dependency>
 
 
@@ -63,7 +67,6 @@
       <artifactId>selenium-java</artifactId>
       <version>${selenium-java.version}</version>
     </dependency>
-
 
   </dependencies>
 
@@ -116,6 +119,16 @@
         <groupId>net.serenity-bdd.maven.plugins</groupId>
         <artifactId>serenity-maven-plugin</artifactId>
         <version>${serenity-maven-plugin.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-single-page-report</artifactId>
+            <version>${serenity.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <reports>single-page-html</reports>
+        </configuration>
         <executions>
           <execution>
               <id>serenity-reports</id>
@@ -126,6 +139,7 @@
           </execution>
         </executions>
       </plugin>
+
     </plugins>
   </build>
 </project>
