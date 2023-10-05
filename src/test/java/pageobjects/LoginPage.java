@@ -2,13 +2,14 @@ package pageobjects;
 
 import base.BasePage;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.BaseTest;
 
 public class LoginPage extends BasePage {
 
-
+   
     @FindBy(css = "input[name='username']")
     private WebElementFacade usernameTf;
 
@@ -33,6 +34,7 @@ public class LoginPage extends BasePage {
 
     public void clickOnLogin(){
         loginBtn.click();
+
     }
 
 
