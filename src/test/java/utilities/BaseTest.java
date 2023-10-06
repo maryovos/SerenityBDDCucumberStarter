@@ -15,9 +15,14 @@ public class BaseTest {
 
     private static final EnvironmentVariables env = SystemEnvironmentVariables.createEnvironmentVariables();
     private static final String BASE_URL = EnvironmentSpecificConfiguration.from(env).getProperty("webdriver.base.url");
+    private static final String LOGIN_PATH = EnvironmentSpecificConfiguration.from(env).getProperty("login.path");
 
     public static String getBaseUrl() {
         return BASE_URL;
+    }
+
+    public static String getLoginPath() {
+        return LOGIN_PATH;
     }
 
     public void initializeProperties() throws IOException {

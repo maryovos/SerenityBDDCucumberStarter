@@ -12,8 +12,7 @@ import java.io.IOException;
 
 public class BasePage extends PageObject {
 
-
-    public final String LOGIN_PAGE = BaseTest.getBaseUrl() + "/web/index.php/auth/login";
+    public final String LOGIN_PAGE = BaseTest.getBaseUrl() + BaseTest.getLoginPath();
     @FindBy(className = "oxd-topbar-header-breadcrumb")
     private WebElementFacade titleMenu;
 
