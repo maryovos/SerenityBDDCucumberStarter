@@ -2,13 +2,9 @@ package pageobjects;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.BaseTest;
-
-import java.io.IOException;
 
 public class BasePage extends PageObject {
 
