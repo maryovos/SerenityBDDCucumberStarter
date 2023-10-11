@@ -7,23 +7,16 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 import org.junit.Assert;
 import pageobjects.LoginPage;
-import utilities.BaseTest;
-
-import java.io.IOException;
 
 public class LoginSteps {
 
     @Steps
     LoginPage loginPage;
 
-    BaseTest baseTest = new BaseTest();
-
 
     @Given("user is on the login page")
     public void userIsOnTheLoginPage(){
-
         loginPage.openOrangeHrmWeb();
-
     }
 
     @When("user enters a valid username")
