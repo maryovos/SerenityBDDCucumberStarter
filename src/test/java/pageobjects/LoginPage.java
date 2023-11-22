@@ -1,9 +1,12 @@
 package pageobjects;
 
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.BaseTest;
+
+import java.util.List;
 
 public class LoginPage extends BasePage {
 
@@ -17,12 +20,18 @@ public class LoginPage extends BasePage {
     @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")
     private WebElementFacade loginBtn;
 
+    @FindAll({
+            @FindBy(className = "class1")
+    })
+    private List<WebElementFacade> elementFacades;
+
     @FindBy(css = "div[class='oxd-alert oxd-alert--error']")
     private WebElementFacade errorMessageLoginFailed;
 
 
     public void inputUsername(){
         waitFor(ExpectedConditions.visibilityOf(usernameTf));
+        System.out.println("Username Placeholder : " + usernameTf.getAttribute("placeholder"));
         usernameTf.sendKeys(BaseTest.getValidUser());
     }
 
@@ -37,7 +46,9 @@ public class LoginPage extends BasePage {
 
 
     public void inputInvalidUsername() {
+
         usernameTf.sendKeys(BaseTest.getInValidUser());
+
     }
 
     public void inputInvalidPassword() {

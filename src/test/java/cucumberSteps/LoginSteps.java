@@ -41,7 +41,6 @@ public class LoginSteps {
 
     @When("user enters a invalid username")
     public void userEntersAInvalidUsername() {
-
         loginPage.inputInvalidUsername();
 
     }
